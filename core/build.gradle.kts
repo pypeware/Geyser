@@ -16,7 +16,8 @@ dependencies {
     api("com.fasterxml.jackson.dataformat", "jackson-dataformat-yaml", Versions.jacksonVersion)
     api("com.google.guava", "guava", Versions.guavaVersion)
 
-    api("com.nukkitx", "nbt", Versions.nbtVersion)
+    //api("com.nukkitx", "nbt", Versions.nbtVersion)
+    api("com.github.pypeware", "NBT", "ad2422b812")
 
     // Fastutil Maps
     implementation("com.nukkitx.fastutil", "fastutil-int-int-maps", Versions.fastutilVersion)
