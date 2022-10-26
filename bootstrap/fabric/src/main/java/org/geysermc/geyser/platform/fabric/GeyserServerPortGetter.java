@@ -23,24 +23,26 @@
  * @link https://github.com/GeyserMC/Geyser
  */
 
-object Versions {
-    const val jacksonVersion = "2.13.2"
-    const val fastutilVersion = "8.5.2"
-    const val nettyVersion = "4.1.80.Final"
-    const val guavaVersion = "29.0-jre"
-    const val gsonVersion = "2.3.1" // Provided by Spigot 1.8.8
-    const val nbtVersion = "2.1.0"
-    const val websocketVersion = "1.5.1"
-    const val protocolVersion = "fed46166"
-    const val raknetVersion = "1.6.28-20220125.214016-6"
-    const val mcauthlibVersion = "d9d773e"
-    const val mcprotocollibversion = "9f78bd5"
-    const val packetlibVersion = "3.0"
-    const val adventureVersion = "4.12.0-20220629.025215-9"
-    const val adventurePlatformVersion = "4.1.2"
-    const val junitVersion = "4.13.1"
-    const val checkerQualVersion = "3.19.0"
-    const val cumulusVersion  = "1.1.1"
-    const val eventsVersion = "1.0-SNAPSHOT"
-    const val log4jVersion  = "2.17.1"
+package org.geysermc.geyser.platform.fabric;
+
+import net.minecraft.server.MinecraftServer;
+
+/**
+ * Represents a getter to the server port in the dedicated server and in the integrated server.
+ */
+public interface GeyserServerPortGetter {
+    /**
+     * Returns the server port.
+     *
+     * <ul>
+     *     <li>If it's a dedicated server, it will return the server port specified in the {@code server.properties} file.</li>
+     *     <li>If it's an integrated server, it will return the LAN port if opened, else -1.</li>
+     * </ul>
+     *
+     * The reason is that {@link MinecraftServer#getPort()} doesn't return the LAN port if it's the integrated server,
+     * and changing the behavior of this method via a mixin should be avoided as it could have unexpected consequences.
+     *
+     * @return The server port.
+     */
+    int geyser$getServerPort();
 }
