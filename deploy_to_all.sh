@@ -1,0 +1,2 @@
+scp bootstrap/bungeecord/build/libs/Geyser-BungeeCord.jar hb-user@hb-node5:/home/hb-user/minecraft/Proxy-Geyser-2/plugins
+scp bootstrap/bungeecord/build/libs/Geyser-BungeeCord.jar hw-user@hb-node16:/home/hw-user/minecraft/Proxy-Geyser-1/plugins
